@@ -13,8 +13,6 @@ yard_orgs.each do |y|
     to_all_org_ids = to_child_org_ids + [o.id]
 
     bills = CarryingBill.search(
-    :from_org_id_in => to_all_org_ids,
-    :transit_org_id_eq => y.id,
     :state_in => ['refunded'],
     :type_in =>  ['TransitBill','HandTransitBill','OutterTransitReturnBill'],
     :bill_date_gte => '2016-05-01',
