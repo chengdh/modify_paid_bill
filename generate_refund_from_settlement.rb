@@ -47,12 +47,13 @@ sets_ids = %w(
 Org.branch_list.each do |b|
   to_child_branch_ids = Org.branch_list_ids(b.id)
   to_all_org_ids = to_child_branch_ids + [b.id]
-  bills = CarryingBill.where(:to_org_id => to_all_org_ids ,
-  :from_org_id => from_all_org_ids,
-  :state => 'settlemented',
-  :settlement_id => sets_ids,
-  :type => ['ComputerBill', 'HandBill', 'ReturnBill',  'AutoCalculateComputerBill'],
-  :completed => false )
+  bills = CarryingBill.search(:to_org_id_in => to_all_org_ids ,
+  :from_org_id_in => from_all_org_ids,
+  :state_eq => 'settlemented',
+  :settlement_id_in => sets_ids,
+  :type_in => ['ComputerBill', 'HandBill', 'ReturnBill',  'AutoCalculateComputerBill'],
+  :bill_no_ni => ['9210377','9202744','1202939','9210383','9202738','9202740','9202739','9202737'],
+  :completed_eq => false )
 
   if bills.present?
     bill_ids = bills.map {|bill| bill.id}

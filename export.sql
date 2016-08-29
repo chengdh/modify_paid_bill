@@ -135,3 +135,4 @@ UPDATE  `carrying_bills`
   and carrying_fee > 0
   and pay_type in ('CA','RE')
   AND completed = 0;
+  #现金付/回执付/无代收货款,自动置结束标记

@@ -27,13 +27,13 @@ update carrying_bills
 --    and SUBSTRING(goods_no,1,6) >= '160401';
 
   update carrying_bills
-    set from_short_state = 'draft'
-    where from_short_state not in ('draft','saved','offed') or from_short_state is null;
+    set from_short_fee_state = 'draft'
+    where from_short_fee_state not in ('draft','saved','offed') or from_short_fee_state is null;
 --    and SUBSTRING(goods_no,1,6) >= '160401';
 
     update carrying_bills
-    set to_short_state = 'draft'
-    where to_short_state not in ('draft','saved','offed') or to_short_state is null;
+    set to_short_fee_state = 'draft'
+    where to_short_fee_state not in ('draft','saved','offed') or to_short_fee_state is null;
 --    and SUBSTRING(goods_no,1,6) >= '160401';
 
 
