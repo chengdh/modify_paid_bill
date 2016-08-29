@@ -5,7 +5,7 @@ admin = User.find_by_username("admin")
 #只生成中转部的结算清单
 orgs = Org.where(:is_active => true,:is_yard => true)
 orgs.each do |b|
-  bills = CarryingBill.search(:to_org_id_eq => b.id ,
+  bills = CarryingBill.search(:transit_org_id_eq => b.id ,
   :state_eq => 'settlemented',
   :type_in =>  ['TransitBill','HandTransitBill','OutterTransitReturnBill'],
   :bill_date_gte => '2016-05-01',
