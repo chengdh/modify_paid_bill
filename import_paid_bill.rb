@@ -19,7 +19,7 @@ Dir.foreach(dir) do |item|
      #更新数据
      paid_date = lines[0]
      bill_nos = lines[1,lines.size - 1]
-     CarryingBill.update_all("state = 'payment_listed',note ='1''",["bill_no in (?)",bill_nos])
+     CarryingBill.update_all("state = 'payment_listed',note ='1'",["bill_no in (?)",bill_nos])
   end
   puts "file count: #{files_count}"
 end
