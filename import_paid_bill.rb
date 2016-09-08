@@ -1,6 +1,6 @@
 #coding: utf-8
 #导入已付款的票据
-dir = "/home/lmis/restore_code/modify_paid_bill/7th_paid_bills"
+dir = "/home/lmis/restore_code/modify_paid_bill/7mth_paid_bills"
 #dir="/Users/chengdh/modify_paid_bill/paid_file"
 #dir = "/home/lmis/restore_code/modify_paid_bill/paid_file"
 files_count = 0
